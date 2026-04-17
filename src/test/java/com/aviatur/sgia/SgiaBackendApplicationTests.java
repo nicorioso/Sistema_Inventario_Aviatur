@@ -1,4 +1,4 @@
-package com.aviatur.sgia.backend;
+package com.aviatur.sgia;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

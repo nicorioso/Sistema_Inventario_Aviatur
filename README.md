@@ -29,7 +29,8 @@ Por defecto el proyecto arranca con `local`.
 - `src/main/resources/application-prod.properties`
 - `.env.example`
 - `compose.yaml`
-- `docs/project-setup.md`
+- `docs/backend-structure.md`
+- `docs/frontend-structure.md`
 
 ## Base de datos local
 
@@ -41,6 +42,7 @@ Por defecto el proyecto arranca con `local`.
 
 - Se dejo Flyway listo desde el inicio para manejar el esquema de base de datos con migraciones.
 - La estructura de paquetes ya esta separada por capas bajo `com.aviatur.sgia`.
+- El frontend Thymeleaf ya tiene una estructura base por `layouts`, `fragments` y `pages`.
 - No se agrego logica de negocio ni entidades del dominio en esta preparacion.
 
 ## Proximo paso

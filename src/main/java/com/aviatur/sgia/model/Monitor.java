@@ -18,26 +18,26 @@ public class Monitor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(name = "inventario", nullable = false, unique = true, length = 120)
+    @Column(name = "inventario", nullable = false, unique = true, length = 100)
     private String inventario;
 
-    @Column(name = "serial", nullable = false, unique = true, length = 120)
+    @Column(name = "serial", nullable = false, unique = true, length = 100)
     private String serial;
 
-    @Column(name = "pulgadas", nullable = false, precision = 5, scale = 2)
+    @Column(name = "pulgadas", nullable = false, precision = 4, scale = 1)
     private BigDecimal pulgadas;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "equipo_id", nullable = false)
+    @JoinColumn(name = "id_equipo", nullable = false)
     private Equipo equipo;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

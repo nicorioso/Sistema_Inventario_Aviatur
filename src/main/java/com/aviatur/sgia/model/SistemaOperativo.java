@@ -18,9 +18,9 @@ public class SistemaOperativo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(name = "nombre", nullable = false, length = 100)
+    @Column(name = "nombre", nullable = false, length = 50)
     private String nombre;
 
     @Column(name = "version", nullable = false, length = 50)
@@ -29,11 +29,11 @@ public class SistemaOperativo {
     @OneToMany(mappedBy = "sistemaOperativo", fetch = FetchType.LAZY)
     private List<Equipo> equipos = new ArrayList<>();
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

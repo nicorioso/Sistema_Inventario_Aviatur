@@ -11,20 +11,20 @@ import jakarta.persistence.Table;
 @Table(name = "telefono")
 public class Telefono extends ActivoTecnologico {
 
-    @Column(name = "mac", nullable = false, unique = true, length = 17)
+    @Column(name = "mac", nullable = false, unique = true, length = 50)
     private String mac;
 
-    @Column(name = "serial", nullable = false, unique = true, length = 120)
+    @Column(name = "serial", nullable = false, unique = true, length = 100)
     private String serial;
 
-    @Column(name = "modelo", nullable = false, length = 120)
+    @Column(name = "modelo", length = 100)
     private String modelo;
 
-    @Column(name = "referencia", nullable = false, length = 120)
+    @Column(name = "referencia", length = 100)
     private String referencia;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_asignado_id")
+    @JoinColumn(name = "id_usuario_asignado")
     private UsuarioAsignado usuarioAsignado;
 
     public String getMac() {

@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface EquipoRepository extends JpaRepository<Equipo, Long> {
+public interface EquipoRepository extends JpaRepository<Equipo, Integer> {
 
     boolean existsBySerial(String serial);
 
@@ -17,9 +17,9 @@ public interface EquipoRepository extends JpaRepository<Equipo, Long> {
 
     Optional<Equipo> findByInventario(String inventario);
 
-    List<Equipo> findByAreaIdOrderByNombrePcAsc(Long areaId);
+    List<Equipo> findByAreaIdOrderByNombrePcAsc(Integer areaId);
 
-    List<Equipo> findByUsuarioAsignadoIdOrderByNombrePcAsc(Long usuarioAsignadoId);
+    List<Equipo> findByUsuarioAsignadoIdOrderByNombrePcAsc(Integer usuarioAsignadoId);
 
     List<Equipo> findByEstadoOrderByNombrePcAsc(EstadoActivo estado);
 }

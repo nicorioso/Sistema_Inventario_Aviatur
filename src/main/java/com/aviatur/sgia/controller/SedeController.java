@@ -40,7 +40,7 @@ public class SedeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SedeResponse> obtenerSedePorId(@PathVariable Long id) {
+    public ResponseEntity<SedeResponse> obtenerSedePorId(@PathVariable Integer id) {
         Sede sede = sedeService.obtenerSedePorId(id);
         return ResponseEntity.ok(toResponse(sede));
     }
@@ -55,7 +55,7 @@ public class SedeController {
 
     @PutMapping("/{id}")
     public ResponseEntity<SedeResponse> actualizarSede(
-            @PathVariable Long id,
+            @PathVariable Integer id,
             @Valid @RequestBody SedeRequest request
     ) {
         Sede sedeActualizada = sedeService.actualizarSede(id, toModel(request));
@@ -63,7 +63,7 @@ public class SedeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarSede(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarSede(@PathVariable Integer id) {
         sedeService.eliminarSede(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

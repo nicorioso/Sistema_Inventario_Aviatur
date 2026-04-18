@@ -8,11 +8,11 @@ public interface SedeService {
 
     List<Sede> listarSedes();
 
-    Sede obtenerSedePorId(Long id);
+    Sede obtenerSedePorId(Integer id);
 
     Sede crearSede(Sede sede);
 
-    Sede actualizarSede(Long id, Sede sedeActualizada);
+    Sede actualizarSede(Integer id, Sede sedeActualizada);
 
-    void eliminarSede(Long id);
+    void eliminarSede(Integer id);
 }

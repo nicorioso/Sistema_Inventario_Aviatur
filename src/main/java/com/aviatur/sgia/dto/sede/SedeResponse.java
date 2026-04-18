@@ -1,7 +1,7 @@
 package com.aviatur.sgia.dto.sede;
 
 public record SedeResponse(
-        Long id,
+        Integer id,
         String nombre,
         String direccion
 ) {

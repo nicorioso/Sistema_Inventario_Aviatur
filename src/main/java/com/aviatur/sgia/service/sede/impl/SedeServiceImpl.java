@@ -39,7 +39,7 @@ public class SedeServiceImpl implements SedeService {
 
     @Override
     @Transactional(readOnly = true)
-    public Sede obtenerSedePorId(Long id) {
+    public Sede obtenerSedePorId(Integer id) {
         validateId(id);
         return findSedeOrThrow(id);
     }
@@ -63,7 +63,7 @@ public class SedeServiceImpl implements SedeService {
     }
 
     @Override
-    public Sede actualizarSede(Long id, Sede sedeActualizada) {
+    public Sede actualizarSede(Integer id, Sede sedeActualizada) {
         validateId(id);
         validatePayload(sedeActualizada);
 
@@ -89,7 +89,7 @@ public class SedeServiceImpl implements SedeService {
     }
 
     @Override
-    public void eliminarSede(Long id) {
+    public void eliminarSede(Integer id) {
         validateId(id);
         Sede sede = findSedeOrThrow(id);
 
@@ -108,12 +108,12 @@ public class SedeServiceImpl implements SedeService {
         sedeRepository.delete(sede);
     }
 
-    private Sede findSedeOrThrow(Long id) {
+    private Sede findSedeOrThrow(Integer id) {
         return sedeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No existe una sede con id " + id));
     }
 
-    private void validateId(Long id) {
+    private void validateId(Integer id) {
         if (id == null || id <= 0) {
             throw new IllegalArgumentException("El id de la sede debe ser un valor positivo");
         }

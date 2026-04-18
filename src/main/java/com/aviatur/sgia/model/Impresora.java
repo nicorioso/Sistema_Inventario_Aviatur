@@ -11,21 +11,21 @@ import jakarta.persistence.Table;
 @Table(name = "impresora")
 public class Impresora extends ActivoTecnologico {
 
-    @Column(name = "serial", nullable = false, unique = true, length = 120)
+    @Column(name = "serial", nullable = false, unique = true, length = 100)
     private String serial;
 
-    @Column(name = "ip", unique = true, length = 45)
+    @Column(name = "ip", nullable = false, unique = true, length = 45)
     private String ip;
 
-    @Column(name = "direccion", nullable = false, length = 255)
+    @Column(name = "direccion", nullable = false, length = 150)
     private String direccion;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "sede_id", nullable = false)
+    @JoinColumn(name = "id_sede", nullable = false)
     private Sede sede;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "area_id")
+    @JoinColumn(name = "id_area")
     private Area area;
 
     public String getSerial() {

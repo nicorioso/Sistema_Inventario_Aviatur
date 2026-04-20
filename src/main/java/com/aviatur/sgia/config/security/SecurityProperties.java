@@ -31,9 +31,19 @@ public class SecurityProperties {
     }
 
     public static class Admin {
+        private String nombre = "Administrador General";
         private String username = "admin";
         private String password = "";
         private boolean passwordEncoded;
+        private boolean tempRegistrationEnabled;
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
 
         public String getUsername() {
             return username;
@@ -57,6 +67,14 @@ public class SecurityProperties {
 
         public void setPasswordEncoded(boolean passwordEncoded) {
             this.passwordEncoded = passwordEncoded;
+        }
+
+        public boolean isTempRegistrationEnabled() {
+            return tempRegistrationEnabled;
+        }
+
+        public void setTempRegistrationEnabled(boolean tempRegistrationEnabled) {
+            this.tempRegistrationEnabled = tempRegistrationEnabled;
         }
     }
 

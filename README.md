@@ -38,6 +38,17 @@ Por defecto el proyecto arranca con `local`.
 2. Levantar MySQL con `docker compose up -d`.
 3. Usar las mismas credenciales del `.env` para la aplicacion.
 
+## Seguridad
+
+- El acceso a `/api/**` requiere autenticacion con rol `ADMIN`.
+- Usuario admin configurable por variables:
+  - `ADMIN_USERNAME`
+  - `ADMIN_PASSWORD`
+  - `ADMIN_PASSWORD_ENCODED` (`true` si `ADMIN_PASSWORD` ya viene en hash BCrypt)
+- CORS configurable con `CORS_ALLOWED_ORIGINS` (lista separada por comas).
+- CSRF habilitado con cookie `XSRF-TOKEN`; las peticiones mutables (`POST`, `PUT`, `DELETE`, etc.) deben enviar el header `X-XSRF-TOKEN`.
+- En `prod` se fuerza HTTPS (`SECURITY_REQUIRE_HTTPS=true`) y cookie de sesion segura.
+
 ## Notas de preparacion
 
 - Se dejo Flyway listo desde el inicio para manejar el esquema de base de datos con migraciones.

@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface ImpresoraRepository extends JpaRepository<Impresora, Long> {
+public interface ImpresoraRepository extends JpaRepository<Impresora, Integer> {
 
     boolean existsBySerial(String serial);
 
@@ -17,11 +17,11 @@ public interface ImpresoraRepository extends JpaRepository<Impresora, Long> {
 
     Optional<Impresora> findByIp(String ip);
 
-    List<Impresora> findBySedeIdOrderBySerialAsc(Long sedeId);
+    List<Impresora> findBySedeIdOrderBySerialAsc(Integer sedeId);
 
-    List<Impresora> findByAreaIdOrderBySerialAsc(Long areaId);
+    List<Impresora> findByAreaIdOrderBySerialAsc(Integer areaId);
 
-    boolean existsBySedeId(Long sedeId);
+    boolean existsBySedeId(Integer sedeId);
 
     List<Impresora> findByEstadoOrderBySerialAsc(EstadoActivo estado);
 }

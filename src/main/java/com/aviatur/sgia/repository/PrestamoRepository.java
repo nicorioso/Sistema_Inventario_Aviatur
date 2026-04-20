@@ -5,11 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PrestamoRepository extends JpaRepository<Prestamo, Long> {
+public interface PrestamoRepository extends JpaRepository<Prestamo, Integer> {
 
-    boolean existsByEquipoIdAndFechaDevolucionIsNull(Long equipoId);
+    boolean existsByEquipoIdAndFechaDevolucionIsNull(Integer equipoId);
 
-    List<Prestamo> findByEquipoIdOrderByFechaInicioDesc(Long equipoId);
+    List<Prestamo> findByEquipoIdOrderByFechaInicioDesc(Integer equipoId);
 
     List<Prestamo> findByCedulaOrderByFechaInicioDesc(String cedula);
 }

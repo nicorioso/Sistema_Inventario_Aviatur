@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface MonitorRepository extends JpaRepository<Monitor, Long> {
+public interface MonitorRepository extends JpaRepository<Monitor, Integer> {
 
     boolean existsByInventario(String inventario);
 
@@ -16,5 +16,5 @@ public interface MonitorRepository extends JpaRepository<Monitor, Long> {
 
     Optional<Monitor> findBySerial(String serial);
 
-    List<Monitor> findByEquipoIdOrderByInventarioAsc(Long equipoId);
+    List<Monitor> findByEquipoIdOrderByInventarioAsc(Integer equipoId);
 }

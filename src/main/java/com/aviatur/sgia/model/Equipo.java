@@ -23,48 +23,48 @@ import java.util.Set;
 @Table(name = "equipo")
 public class Equipo extends ActivoTecnologico {
 
-    @Column(name = "nombre_pc", nullable = false, length = 120)
+    @Column(name = "nombre_pc", nullable = false, length = 100)
     private String nombrePc;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo", nullable = false, length = 30)
+    @Column(name = "tipo", nullable = false, length = 50)
     private TipoEquipo tipo;
 
-    @Column(name = "modelo", nullable = false, length = 120)
+    @Column(name = "modelo", length = 100)
     private String modelo;
 
-    @Column(name = "serial", nullable = false, unique = true, length = 120)
+    @Column(name = "serial", nullable = false, unique = true, length = 100)
     private String serial;
 
-    @Column(name = "inventario", nullable = false, unique = true, length = 120)
+    @Column(name = "inventario", nullable = false, unique = true, length = 100)
     private String inventario;
 
-    @Column(name = "procesador", nullable = false, length = 120)
+    @Column(name = "procesador", length = 100)
     private String procesador;
 
-    @Column(name = "ram", nullable = false, length = 60)
+    @Column(name = "ram", length = 50)
     private String ram;
 
-    @Column(name = "almacenamiento", nullable = false, length = 120)
+    @Column(name = "almacenamiento", length = 50)
     private String almacenamiento;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_asignado_id")
+    @JoinColumn(name = "id_usuario_asignado")
     private UsuarioAsignado usuarioAsignado;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "area_id", nullable = false)
+    @JoinColumn(name = "id_area", nullable = false)
     private Area area;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "sistema_operativo_id", nullable = false)
+    @JoinColumn(name = "id_sistema_operativo", nullable = false)
     private SistemaOperativo sistemaOperativo;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "equipo_software",
-            joinColumns = @JoinColumn(name = "equipo_id"),
-            inverseJoinColumns = @JoinColumn(name = "software_id")
+            joinColumns = @JoinColumn(name = "id_equipo"),
+            inverseJoinColumns = @JoinColumn(name = "id_software")
     )
     private Set<Software> softwareInstalado = new LinkedHashSet<>();
 

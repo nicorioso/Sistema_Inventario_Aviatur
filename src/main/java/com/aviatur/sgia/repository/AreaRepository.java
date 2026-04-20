@@ -5,11 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface AreaRepository extends JpaRepository<Area, Long> {
+public interface AreaRepository extends JpaRepository<Area, Integer> {
 
-    List<Area> findBySedeIdOrderByNombreAsc(Long sedeId);
+    List<Area> findBySedeIdOrderByNombreAsc(Integer sedeId);
 
-    boolean existsBySedeId(Long sedeId);
+    boolean existsBySedeId(Integer sedeId);
 
-    boolean existsByNombreIgnoreCaseAndSedeId(String nombre, Long sedeId);
+    boolean existsByNombreIgnoreCaseAndSedeId(String nombre, Integer sedeId);
 }

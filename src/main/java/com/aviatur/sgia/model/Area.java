@@ -20,13 +20,13 @@ public class Area {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(name = "nombre", nullable = false, length = 120)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "sede_id", nullable = false)
+    @JoinColumn(name = "id_sede", nullable = false)
     private Sede sede;
 
     @OneToMany(mappedBy = "area", fetch = FetchType.LAZY)
@@ -35,11 +35,11 @@ public class Area {
     @OneToMany(mappedBy = "area", fetch = FetchType.LAZY)
     private List<Impresora> impresoras = new ArrayList<>();
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

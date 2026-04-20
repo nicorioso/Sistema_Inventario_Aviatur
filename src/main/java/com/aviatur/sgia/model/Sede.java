@@ -19,12 +19,12 @@ public class Sede {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(name = "nombre", nullable = false, length = 120)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(name = "direccion", nullable = false, length = 255)
+    @Column(name = "direccion", nullable = false, length = 150)
     private String direccion;
 
     @OneToMany(mappedBy = "sede", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
@@ -33,11 +33,11 @@ public class Sede {
     @OneToMany(mappedBy = "sede", fetch = FetchType.LAZY)
     private List<Impresora> impresoras = new ArrayList<>();
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

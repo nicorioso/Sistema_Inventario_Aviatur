@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UsuarioAsignadoRepository extends JpaRepository<UsuarioAsignado, Long> {
+public interface UsuarioAsignadoRepository extends JpaRepository<UsuarioAsignado, Integer> {
 
     boolean existsByCedula(String cedula);
 

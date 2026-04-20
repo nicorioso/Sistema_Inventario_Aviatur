@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface HistorialTrasladoRepository extends JpaRepository<HistorialTraslado, Long> {
+public interface HistorialTrasladoRepository extends JpaRepository<HistorialTraslado, Integer> {
 
-    List<HistorialTraslado> findByTipoActivoAndActivoIdOrderByFechaDesc(TipoActivo tipoActivo, Long activoId);
+    List<HistorialTraslado> findByTipoActivoAndActivoIdOrderByFechaDesc(TipoActivo tipoActivo, Integer activoId);
 }

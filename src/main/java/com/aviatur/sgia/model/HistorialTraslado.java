@@ -18,29 +18,30 @@ public class HistorialTraslado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_activo", nullable = false, length = 20)
+    @Column(name = "tipo_activo", nullable = false, length = 20,
+            columnDefinition = "ENUM('EQUIPO','IMPRESORA','TELEFONO')")
     private TipoActivo tipoActivo;
 
-    @Column(name = "activo_id", nullable = false)
-    private Long activoId;
+    @Column(name = "id_activo", nullable = false)
+    private Integer activoId;
 
     @Column(name = "fecha", nullable = false)
     private LocalDateTime fecha;
 
-    @Column(name = "origen", nullable = false, length = 255)
+    @Column(name = "origen", nullable = false, length = 150)
     private String origen;
 
-    @Column(name = "destino", nullable = false, length = 255)
+    @Column(name = "destino", nullable = false, length = 150)
     private String destino;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -52,11 +53,11 @@ public class HistorialTraslado {
         this.tipoActivo = tipoActivo;
     }
 
-    public Long getActivoId() {
+    public Integer getActivoId() {
         return activoId;
     }
 
-    public void setActivoId(Long activoId) {
+    public void setActivoId(Integer activoId) {
         this.activoId = activoId;
     }
 

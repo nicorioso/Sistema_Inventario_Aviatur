@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface TelefonoRepository extends JpaRepository<Telefono, Long> {
+public interface TelefonoRepository extends JpaRepository<Telefono, Integer> {
 
     boolean existsByMac(String mac);
 
@@ -17,7 +17,7 @@ public interface TelefonoRepository extends JpaRepository<Telefono, Long> {
 
     Optional<Telefono> findBySerial(String serial);
 
-    List<Telefono> findByUsuarioAsignadoIdOrderByModeloAsc(Long usuarioAsignadoId);
+    List<Telefono> findByUsuarioAsignadoIdOrderByModeloAsc(Integer usuarioAsignadoId);
 
     List<Telefono> findByEstadoOrderByModeloAsc(EstadoActivo estado);
 }
